@@ -39,3 +39,14 @@ PhoneNumber.addEventListener("input", function () {
     PhoneNumberError.textContent = "Invalid PhoneNumber";
   }
 });
+
+var Password = document.querySelector("#password");
+var passwordError = document.querySelector(".error-password");
+Password.addEventListener("input", function () {
+  password = RegExp("(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[A-Z])[a-zA-Z0-9].{8,}$");
+  if (password.test(Password.value)) {
+    passwordError.textContent = "";
+  } else {
+    passwordError.textContent = "Invalid passward ";
+  }
+});
